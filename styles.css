@@ -1,0 +1,447 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.navbar .logo img {
+    height: 50px; 
+    width: auto; 
+}
+
+.navbar .nav-links {
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar .nav-links li a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+.menu-toggle {
+    display: none;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .navbar .nav-links {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        background: #333; 
+        top: 60px; 
+        left: 0;
+        right: 0;
+        z-index: 999; 
+    }
+    
+    .navbar .nav-links.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-toggle .bar {
+        height: 3px; 
+        width: 25px; 
+        background: white; 
+        margin: 3px 0; 
+    }
+}
+
+
+/* Home Section */
+.home-section {
+    height: 100vh;
+    background: url('https://www.proglobalevents.com/wp-content/uploads/bigstock-Calendar-Event-Planner-Is-348584938-1.jpg.avif') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.home-section .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-section h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.home-section p {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.home-section .btn {
+    padding: 10px 20px;
+    background: #f44336;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.home-section .btn:hover {
+    background: #d32f2f;
+}
+
+
+/* About Section */
+.about-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f4f4f4 30%, #eaeaea 100%);
+}
+
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.about-text {
+    width: 60%;
+}
+
+.about-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #f44336;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555; 
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.about-text ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex; 
+    align-items: center;
+}
+
+.about-text ul li::before {
+    content: "✔️"; 
+    margin-right: 8px; 
+    color: #f44336; 
+}
+
+.about-image {
+    width: 30%;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Add hover effect */
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.about-section .btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 25px; /* Increased padding */
+    background: #f44336; /* Match the heading color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold; /* Make button text bold */
+    transition: background 0.3s ease; /* Smooth transition */
+}
+
+.about-section .btn:hover {
+    background: #d32f2f; /* Darker shade on hover */
+}
+
+
+
+/* Events Section */
+.events-section {
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.events-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.event-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.event-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: calc(33% - 20px);
+    margin: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.event-info h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.event-info p {
+    margin: 5px 0;
+}
+
+.event-info .btn {
+    padding: 10px 15px;
+    background: #f44336;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.event-info .btn:hover {
+    background: #d32f2f;
+}
+
+
+/* Booking Section */
+.booking-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f4f4f4 30%, #eaeaea 100%);
+}
+
+.booking-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+.booking-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+    background: #fff;
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; 
+    color: #555; 
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem; 
+    transition: border-color 0.3s; 
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #f44336; 
+    outline: none;
+}
+
+.booking-section .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #f44336; 
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold; 
+    transition: background 0.3s; 
+}
+
+.booking-section .btn:hover {
+    background: #d32f2f; 
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 20px;
+    background: #f4f4f4; 
+    text-align: center;
+}
+
+.contact-section h2 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #f44336;
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    width: 300px; 
+    margin: 0 20px;
+    padding: 20px;
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    text-align: left;
+}
+
+.contact-item i {
+    font-size: 2rem; 
+    color: #f44336; 
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.contact-item a {
+    color: #333; 
+    text-decoration: none; 
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.contact-section .btn {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s; 
+}
+
+.contact-section .btn:hover {
+    background: #555;
+}
+
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+html
+{
+    scroll-behavior: smooth;
+}
